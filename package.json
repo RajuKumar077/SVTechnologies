@@ -4,7 +4,8 @@
   "description": "Project-Based Learning & Placement Support Landing Page",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "prebuild": "chmod +x node_modules/.bin/vite",
+    "build": "npx vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
