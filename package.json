@@ -2,16 +2,26 @@
   "name": "pbl-support-modular",
   "version": "1.0.0",
   "description": "Project-Based Learning & Placement Support Landing Page",
+  "private": true,
   "scripts": {
     "dev": "vite",
-    "prebuild": "chmod +x node_modules/.bin/vite",
-    "build": "npx vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "@clerk/clerk-react": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
   "devDependencies": {
-    "vite": "^5.0.0",
-    "tailwindcss": "^3.4.0",
+    "@types/node": "^25.3.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.0.0",
+    "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
-    "autoprefixer": "^10.4.16"
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.0.0"
   }
 }
