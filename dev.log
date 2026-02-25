@@ -1,0 +1,14 @@
+
+> pbl-support-modular@1.0.0 dev
+> next dev
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.17:3000
+- Environments: .env.local
+
+✓ Starting...
+✓ Ready in 1493ms
+○ Compiling / ...
+✓ Finished writing to filesystem cache in 50s
+[?25h
