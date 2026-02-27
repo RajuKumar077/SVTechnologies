@@ -1,10 +1,3 @@
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  UserButton,
-} from "@clerk/clerk-react";
 import Hero from "./components/Hero.js";
 import HowItWorks from "./sections/HowItWorks.js";
 import ProjectCategories from "./sections/ProjectCategories.js";
@@ -16,16 +9,6 @@ export default function App() {
 
   return (
     <>
-      <header style={{ padding: "16px", display: "flex", justifyContent: "flex-end", gap: "12px" }}>
-        <SignedOut>
-          <SignInButton />
-          <SignUpButton />
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
-      </header>
-
       <div dangerouslySetInnerHTML={{ __html: Hero() }} />
       <div dangerouslySetInnerHTML={{ __html: HowItWorks() }} />
       <div dangerouslySetInnerHTML={{ __html: ProjectCategories() }} />
