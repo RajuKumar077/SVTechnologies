@@ -16,12 +16,6 @@ export default function Header() {
           <a href="#how-it-works" class="text-sm font-semibold text-[var(--foreground)] hover:text-[var(--accent-background)] transition-colors">How It Works</a>
           <a href="#testimonials" class="text-sm font-semibold text-[var(--foreground)] hover:text-[var(--accent-background)] transition-colors">Success Stories</a>
         </div>
-
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#hero" class="rounded-md bg-[var(--primary-background)] px-4 py-2 text-sm font-semibold text-[var(--primary-foreground)] shadow-sm hover:opacity-90 transition-opacity">
-            Apply Now
-          </a>
-        </div>
       </nav>
     </header>
   `
