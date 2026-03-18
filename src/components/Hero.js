@@ -1,16 +1,16 @@
-import Header from "./Header.js"
+import Header from "./Header.js";
 
 export default function Hero() {
   return `
     <section id="hero" class="relative overflow-hidden bg-[var(--background)]">
       ${Header()}
       <div class="relative isolate px-6 pt-14 lg:px-8">
-        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 text-center fade-in">
+        <div class="mx-auto max-w-2xl py-32 text-center sm:py-48 lg:py-56 fade-in">
           <div class="hidden sm:mb-8 sm:flex sm:justify-center">
             <div class="relative rounded-full px-3 py-1 text-sm text-[var(--muted-foreground)] ring-1 ring-[var(--border)] hover:ring-[var(--foreground)]/20">
-              SV Technologies — 92% Placement Success!
-              <a href="#testimonials" class="font-semibold text-[var(--accent-background)] ml-1">
-                Read report →
+              SV Technologies | 92% Placement Success
+              <a href="#testimonials" class="ml-1 font-semibold text-[var(--accent-background)]">
+                Read report ->
               </a>
             </div>
           </div>
@@ -22,15 +22,15 @@ export default function Hero() {
             with our comprehensive project-based learning and dedicated placement support.
           </p>
           <div class="mt-10 flex items-center justify-center gap-x-6">
-            <a href="#project-categories" class="rounded-md bg-[var(--primary-background)] px-6 py-3 text-sm font-semibold text-[var(--primary-foreground)] shadow-lg hover:scale-105 transition-transform">
+            <a href="#project-categories" class="rounded-md bg-[var(--primary-background)] px-6 py-3 text-sm font-semibold text-[var(--primary-foreground)] shadow-lg transition-transform hover:scale-105">
               Explore Programs
             </a>
             <a href="#how-it-works" class="text-sm font-semibold text-[var(--foreground)]">
-              How It Works <span aria-hidden="true">→</span>
+              How It Works <span aria-hidden="true">-></span>
             </a>
           </div>
         </div>
       </div>
     </section>
-  `
+  `;
 }

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   SignedIn,
   SignedOut,
@@ -13,17 +14,42 @@ import MemberRoadmap from "./sections/MemberRoadmap.jsx";
 import Footer from "./components/Footer.js";
 
 export default function App() {
-  document.title = "SV Technologies Project-Based Learning & Placement";
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    document.title = "SV Technologies Project-Based Learning & Placement";
+    const savedTheme = window.localStorage.getItem("svt-theme");
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+    setTheme(savedTheme || systemTheme);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem("svt-theme", theme);
+  }, [theme]);
+
   const secondaryButtonClass =
     "rounded-lg border border-[var(--border)] bg-[var(--card-background)] px-4 py-2 text-sm font-semibold text-[var(--foreground)] transition hover:bg-[var(--muted-background)]";
   const primaryButtonClass =
     "rounded-lg border border-transparent bg-gradient-to-r from-indigo-600 to-sky-500 px-4 py-2 text-sm font-bold text-white shadow-[0_8px_16px_rgba(79,70,229,0.28)] transition hover:brightness-105";
+  const themeToggleLabel = theme === "dark" ? "Light mode" : "Dark mode";
 
   return (
     <>
       <div className="pointer-events-none fixed inset-x-0 top-3 z-[1000] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl justify-center">
-          <header className="pointer-events-auto flex items-center gap-2 rounded-xl border border-[var(--border)] bg-white/90 p-2 shadow-[0_8px_24px_rgba(0,0,0,0.08)] backdrop-blur-sm">
+          <header className="pointer-events-auto flex items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-2 shadow-[var(--surface-shadow)] backdrop-blur-sm">
+            <button
+              type="button"
+              onClick={() => setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"))}
+              className="rounded-lg border border-[var(--border)] bg-[var(--surface-solid)] px-3 py-2 text-sm font-semibold text-[var(--foreground)] transition hover:bg-[var(--muted-background)]"
+              aria-label={themeToggleLabel}
+              title={themeToggleLabel}
+            >
+              {theme === "dark" ? "Light" : "Dark"}
+            </button>
             <SignedOut>
               <SignInButton mode="modal">
                 <button type="button" className={secondaryButtonClass}>
